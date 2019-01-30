@@ -1,0 +1,14 @@
+body {
+  background-image: url(/imagenes/backgrund.jpg);
+
+}
+.menu-image{
+  width: 90%;
+}
+
+.slide.current img{
+  width: 100%;
+}
+.container {
+  margin-top: 67px;
+}
