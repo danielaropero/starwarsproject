@@ -1,36 +1,50 @@
 import React from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
-export default function Menu () {
+import {Link, Route, Switch} from 'react-router-dom';
+
+export default function Navigation () {
     return (
        <div>
-           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="Home">Star Wars</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="Home">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Characters">Characters</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Films">Films</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Planets">Planets</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Naves">SpaceShips</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Vehicles">Vehicles</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+     <Navbar color="dark" light expand="md">
+        <NavbarBrand href="/"><Link to="/Home">Star Wars</Link></NavbarBrand>
+        <NavbarToggler />
+        <Collapse navbar>
+          <Nav className="g-auto" navbar>
+            <NavItem>
+              <NavLink><Link to="/Home"></Link></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink><Link to="/Films">Films</Link></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink><Link to="/Characters">Characters</Link></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink><Link to="/Planets">Planets</Link></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink><Link to="/Vehicles">Vehicles</Link></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink><Link to="/Naves">Spaceships</Link></NavLink>
+            </NavItem>
+
+          </Nav>
+        </Collapse>
+      </Navbar>
        </div>
     )
 }
